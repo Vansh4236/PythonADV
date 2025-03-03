@@ -1,0 +1,120 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+1)ploting with line
+x=np.array([0,1,2,3])   # ([1,10])
+y=np.array([2,4,6,8])   # ([0,20])
+plt.plot(x,y)
+plt.show()
+
+2)ploting without line
+x_axis=np.array([0,5])
+y_axis=np.array([3,7])
+plt.plot(x_axis, y_axis, 'o')   # o is the parameter
+plt.show()
+
+3)ploting multiplre points
+x_axis=np.array([1, 2, 6, 8])
+y_axis=np.array([3, 8, 1, 10])
+plt.plot(x_axis, y_axis)
+plt.show()
+
+4)with default x axis
+y_axis=np.array([3, 8, 1, 10, 5, 7])
+plt.plot(y_axis)
+plt.show()
+
+5)using markers
+y_axis=np.array([3,6,9,12])
+plt.plot(y_axis,marker='o')   # '*','.',
+plt.show()
+
+6)useing linestyle
+y_axis=np.array([3, 8, 1, 10])
+plt.plot(y_axis, linestyle='dotted')   # linestyle='dashed'
+plt.show()
+
+7) ploting multiple lines
+a1=np.array([3, 8, 1, 10])
+a2=np.array([6, 2, 7, 11])
+plt.plot(a1)
+plt.plot(a2)
+plt.show()
+
+8)using grid
+x=np.array([10,20,30,40,50])
+y=np.array([12,26,13,18,16])
+plt.plot(x,y)
+plt.title("HeartRate")
+plt.xlabel("Pulse")
+plt.ylabel("Rate")
+plt.grid()      # plt.grid(axis='x')
+plt.show()
+
+9)using single grid
+x=np.array([10,20,30,40,50])
+y=np.array([12,26,13,18,16])
+plt.plot(x,y)
+plt.title("HeartRate")
+plt.xlabel("Pulse")
+plt.ylabel("Rate")
+plt.grid(axis='y')
+plt.show()
+
+10)matplotlib subplot
+# plot 1:
+x=np.array([0,1,2,3])
+y=np.array([3,8,1,10])
+plt.subplot(2,2,1)
+plt.plot(x,y)
+
+# plot 2:
+x=np.array([0,1,2,3])
+y=np.array([10,20,30,40])
+plt.subplot(1,2,2)
+plt.plot(x,y)
+plt.show()
+
+12)scatter
+x=np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y=np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+plt.scatter(x,y) 
+plt.show()
+
+13)bargraphs
+x=np.array(["A", "B", "C", "D"])
+y=np.array([3, 8, 1, 10])
+plt.bar(x,y)      # for horizontal bar use- barh
+plt.show()
+
+14)pie charts
+y=np.array([35,25,25,15])
+plt.pie(y)
+plt.show() 
+
+15)explode
+y=np.array([35,25,25,15])
+mylabels=['A','B','C','D']
+myexplode=[0.2,0,0,0]
+plt.pie(y,labels=mylabels,explode=myexplode)
+plt.show() 
+
+16)legends
+y=np.array([35,25,25,15])
+mylabels=['A','B','C','D']
+plt.pie(y,labels=mylabels)
+plt.legend()
+plt.show()
+
+17)hitogram
+x=np.random.normal(100,20,100)
+plt.hist(x)
+plt.show() 
+
+18)shadow
+y=np.array([35,25,25,15])
+mylabels=['A','B','C','D']
+myexplode=[0.2,0,0,0]
+plt.pie(y,labels=mylabels,explode=myexplode,shadow=True)
+plt.show() 

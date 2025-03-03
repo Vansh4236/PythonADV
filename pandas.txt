@@ -1,0 +1,113 @@
+1. DataFrame
+df=pd.DataFrame(EmployeeDict)
+df
+
+2.pd.read_csv('Heart_Data.csv')
+
+
+2.series_name=pd.Series([1,2,3,4,5])
+
+3.Employee_data=pd.read_excel('Employee_Records.xlsx')
+
+4.df.shape
+NumRows=df.shape[0]
+NumColumns=df.shape[1]
+print("Number of Rows:",NumRows)
+print("Number of Columns:",NumColumns)
+
+5.df.columns
+for i in df.columns:
+    print("Column Name is:",i)
+df.columns[0]
+
+6.df.columns.tolist()
+
+7.df.index
+for i in df.index:
+    print(i)
+
+8.print(df.index.tolist())
+
+9.arr.axes
+
+10.arr.dtypes
+
+11.df.info()
+
+12.arr.describe()
+
+13.df.head()
+df.head(10)
+
+14.df.tail()
+df.tail(10)
+
+15.iloc():
+	iloc() helps us to select a specific row or column from the data set.
+
+	Easily retrieve any particular value from a row or column by using index values.
+
+Employee_data.iloc[0:4,0:3]
+Employee_data.iloc[[1,4],[1,2]]
+
+16.loc(): The loc() attribute to return one or more specified row(s)
+Employee_data.loc[1:5]
+Employee_data.loc[0:3,'Salary':'City']
+
+17.New.sort_values('Age in Yrs')
+New.sort_values('Age in Yrs',inplace=True)
+New.sort_values('Age in Yrs',inplace=False,ascending=True,ignore_index=True)
+
+
+18. i.'9'.isdigit()
+
+18.isna():
+The isna() method returns a DataFrame object where all the values are replaced with a Boolean value True for NA (not-a -number) values, and otherwise False.
+
+df.isna()
+
+
+19.sum():
+Return the sum of array elements over a given axis treating Not a Numbers (NaNs) as zero.
+df.isna().sum()
+
+20. Drop=df.dropna()
+    Drop
+
+21. thresh: Specifies the number of NULL values required to remove the row or column.
+Drop=df.dropna(thresh=5)  # Min 5 non-null values in rows
+Drop
+
+
+22.Apply Function:
+The apply() method allows to apply a function along one of the axis of the DataFrame, default 0, which is the index (row) axis.
+
+def Addition(num):
+    return num+num
+df.apply(Addition)
+
+
+23.df[ColName].value_counts()
+df['Gender'].value_counts()
+
+24.df[ColName].value_counts().to_dict()
+df['Gender'].value_counts().to_dict()
+
+25.df[ColName].unique()
+df['Gender'].unique()
+
+26.df[ColName].nunique()
+df['Gender'].nunique()   # i.e Male,Female
+
+27.df.replace()
+df['Gender'].replace({'male':'Male','female':'Female'})
+df['Gender'].replace({'male':'Male','female':'Female'},inplace=True)
+
+28.df.rename()
+Demo.rename({'NAME':'Name'},axis=1)
+
+29.df.astype()
+df['PassengerId'].astype(float)
+
+30.df.insert()
+Demo.insert(0,'DOB',[26,11,11],allow_duplicates=False)
